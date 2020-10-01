@@ -1,0 +1,18 @@
+.board-container {
+    margin-top: 50px;
+}
+
+.btn{
+    padding: 5px;
+    float: left;
+    margin: 10px;
+    background-color: rgb(106, 53, 128);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 10px;
+}
+.cl{
+    margin: 10px;
+}

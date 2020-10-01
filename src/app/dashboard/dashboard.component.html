@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="justify-content-md-center">
+      <div class="col-md-auto">
+          <button type="end-game" class="btn btn-primary" (click)="endGame()">End Game</button>
+      </div>
+      <div class="col-md-auto">
+          <button type="new-game" class="btn btn-primary" (click)="newGame()">New Game</button>
+      </div>
+      <div class="col-md-auto">
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <button type="join-game" class="btn btn-primary" (click)="joinGame(id.value)">
+                      Join Game
+                  </button>
+              </div>
+             
+          </div>
+      </div> 
+  </div><br>
+      <div class="col-md-auto part2">
+          <input type="text" #id class="form-control" placeholder="Game Id">
+          <span class="badge badge-primary"> Game: {{gameId}}</span>
+      </div>
+ 
+  <div class="row justify-content-md-center">
+      <app-game-board></app-game-board>
+  </div>
+</div>

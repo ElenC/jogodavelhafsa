@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+export class RegisterComponent implements OnInit {
+  public email: string;
+  public password: string;
+  public verifyPassword: string;
+
+  constructor(private auth: AuthService, private db: AngularFireDatabase, private router: Router) { }
+
+  ngOnInit() {
+  }
+
+  registerWithEmail() {
+    if (this.password !== this.verifyPassword) {
+      alert("Passwords do not match.");
+    } else {
+      this.auth.registerWithEmail(this.email, this.password)
+        .then(u => {
+          this.router.navigate(["dashboard"]);
+        })
+        .catch(e => console.log(e));
+    }
+  }
+
+}
